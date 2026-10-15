@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Bridal Salon - Elegant Bridal Beauty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; background: linear-gradient(135deg, #000000, #8b0000); }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); z-index: 1000; padding: 15px 20px; box-shadow: 0 2px 10px rgba(139,0,0,0.5); border-bottom: 2px solid #8b0000; }
+        nav ul { list-style: none; display: flex; justify-content: center; }
+        nav li { margin: 0 20px; }
+        nav a { text-decoration: none; color: #8b0000; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: #ffffff; }
+        header { height: 100vh; display: flex; position: relative; }
+        header .left { width: 50%; background: url('https://vanitysalons.pk/wp-content/uploads/2024/12/Bridal-Makeup.jpg') no-repeat center/cover; }
+        header .right { width: 50%; background: linear-gradient(135deg, rgba(139,0,0,0.8), rgba(0,0,0,0.7), rgba(255,140,0,0.4)); display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+        header .content { animation: fadeInUp 1s ease-out; }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 4.5em; margin: 0; text-shadow: 1px 1px 3px #000000; }
+        header p { font-size: 1.8em; margin: 20px 0; text-shadow: 1px 1px 2px #000000; }
+        .cta-button { background: linear-gradient(135deg, #8b0000, #000000); color: white; padding: 18px 45px; border: 2px solid #8b0000; border-radius: 50px; font-size: 1.3em; cursor: pointer; transition: all 0.4s; box-shadow: 0 3px 10px rgba(139,0,0,0.4); }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(139,0,0,0.5); }
+        section { padding: 100px 20px; }
+        .about { background: linear-gradient(135deg, #f9f9f9, #ffe4e1); text-align: center; border-top: 2px solid #f4d4d4; }
+        .about h2 { font-family: 'Playfair Display', serif; font-size: 3em; color: #8b0000; margin-bottom: 30px; }
+        .services { background: linear-gradient(135deg, #ffffff, #f0f0f0); border-top: 2px solid #000000; }
+        .services h2 { text-align: center; font-family: 'Playfair Display', serif; font-size: 3em; color: #8b0000; margin-bottom: 60px; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .service { background: linear-gradient(135deg, #fff, #f0f0f0); padding: 40px; border-radius: 20px; box-shadow: 0 8px 20px rgba(139,0,0,0.3); text-align: center; transition: transform 0.4s; border: 1px solid #8b0000; }
+        .service:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(139,0,0,0.4); }
+        .service h3 { font-size: 2em; color: #8b0000; margin-bottom: 20px; }
+        .gallery { background: linear-gradient(135deg, #ffe4e1, #8b0000); text-align: center; border-top: 2px solid #000000; }
+        .gallery h2 { font-family: 'Playfair Display', serif; font-size: 3em; color: #000000; margin-bottom: 60px; }
+        .slider { position: relative; max-width: 1200px; margin: 0 auto; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
+        .slides { display: flex; transition: transform 0.5s ease; }
+        .slide { min-width: 100%; }
+        .slide img { width: 100%; height: 400px; object-fit: cover; }
+        .slider-buttons { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 20px; }
+        .slider-button { background: rgba(139,0,0,0.8); border: none; padding: 15px; border-radius: 50%; cursor: pointer; font-size: 1.5em; transition: background 0.3s; color: white; }
+        .slider-button:hover { background: rgba(0,0,0,0.9); }
+        .testimonials { background: linear-gradient(135deg, #ffffff, #f9f9f9); border-top: 2px solid #000000; }
+        .testimonials h2 { text-align: center; font-family: 'Playfair Display', serif; font-size: 3em; color: #8b0000; margin-bottom: 60px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .testimonial { background: linear-gradient(135deg, #f9f9f9, #ffffff); padding: 40px; border-radius: 20px; box-shadow: 0 8px 20px rgba(139,0,0,0.3); text-align: center; transition: transform 0.3s; border: 1px solid #8b0000; }
+        .testimonial:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(139,0,0,0.4); }
+        .testimonial p { font-style: italic; font-size: 1.2em; margin-bottom: 20px; color: #000000; }
+        .testimonial cite { font-weight: bold; color: #8b0000; font-size: 1.1em; }
+        .contact { background: linear-gradient(135deg, #8b0000, #000000, #ff8c00); color: white; text-align: center; border-top: 2px solid #ffffff; }
+        .contact h2 { font-family: 'Playfair Display', serif; font-size: 3em; margin-bottom: 30px; }
+        .contact form { max-width: 700px; margin: 0 auto; }
+        .contact input, .contact textarea { width: 100%; padding: 18px; margin: 15px 0; border: 2px solid #8b0000; border-radius: 10px; font-size: 1.1em; background: rgba(255,255,255,0.9); color: #000000; }
+        .contact button { background: linear-gradient(135deg, #8b0000, #000000); color: white; padding: 18px 40px; border: none; border-radius: 50px; font-size: 1.3em; cursor: pointer; margin-top: 20px; transition: all 0.3s; box-shadow: 0 3px 10px rgba(139,0,0,0.4); }
+        .contact button:hover { background: linear-gradient(135deg, #000000, #8b0000); transform: scale(1.05); }
+        footer { background: linear-gradient(135deg, #000000, #8b0000); color: white; text-align: center; padding: 30px; border-top: 2px solid #000000; }
+        footer p { margin: 0; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { header { flex-direction: column; height: auto; } header .left, header .right { width: 100%; height: 50vh; } header h1 { font-size: 3em; } .service-grid, .testimonial-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home"><font color="White">Home</font></a></li>
+            <li><a href="#about"><font color="White">About</font></a></li>
+            <li><a href="#services"><font color="White">Services</font></a></li>
+            <li><a href="#gallery"><font color="White">Gallery</font></a></li>
+            <li><a href="#testimonials"><font color="White">estimonials</font></a></li>
+            <li><a href="#contact"><font color="White">Contact</font></a></li>
+        </ul>
+    </nav>
+    
+    <header id="home">
+        <div class="left"></div>
+        <div class="right">
+            <div class="content">
+                <h1>Glamour Bridal Salon</h1>
+                <p>Timeless Elegance for Your Dream Wedding</p>
+                <button class="cta-button">Book Now</button>
+            </div>
+        </div>
+    </header>
+    
+    <section id="about" class="about">
+        <h2>About Glamour Bridal</h2>
+        <p>Specializing in bespoke bridal makeup, hair, and beauty services, we transform brides into visions of perfection. With years of experience and a passion for artistry, we ensure every detail is flawless.</p>
+    </section>
+    
+    <section id="services" class="services">
+        <h2>Our Signature Services</h2>
+        <div class="service-grid">
+            <div class="service">
+                <h3>Bridal Makeup</h3>
+                <p>Customized, long-lasting makeup using premium products for natural or glamorous looks.</p>
+            </div>
+            <div class="service">
+                <h3>Hair & Styling</h3>
+                <p>Elegant hairstyles, accessories, and treatments to complement your bridal attire.</p>
+            </div>
+            <div class="service">
+                <h3>Mehndi & Henna</h3>
+                <p>Intricate designs blending tradition with modern artistry.</p>
+            </div>
+            <div class="service">
+                <h3>Pre-Wedding Packages</h3>
+                <p>Comprehensive prep including facials, manicures, and trial sessions.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="gallery" class="gallery">
+        <h2>Bridal Gallery</h2>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="https://images.unsplash.com/photo-1596178060810-fb4bd482ee2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Bridal Makeup Transformation"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Elegant Hair Styling"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Beautiful Mehndi Design"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Complete Bridal Look"></div>
+            </div>
+            <div class="slider-buttons">
+                <button class="slider-button" onclick="prevSlide()">&#10094;</button>
+                <button class="slider-button" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials" class="testimonials">
+        <h2>Happy Brides Speak</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"The team at Glamour Bridal made me feel like a princess. My makeup was stunning and lasted through the entire celebration!"</p>
+                <cite>- Zara Ahmed</cite>
+            </div>
+            <div class="testimonial">
+                <p>"Incredible attention to detail. Highly recommend for any bride looking for perfection."</p>
+                <cite>- Nadia Khan</cite>
+            </div>
+            <div class="testimonial">
+                <p>"From mehndi to makeup, everything was flawless. Thank you for making my day magical!"</p>
+                <cite>- Ayesha Malik</cite>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone" required>
+            <textarea placeholder="Tell us about your bridal needs" rows="6" required></textarea>
+            <button type="submit">Send Inquiry</button>
+        </form>
+        <p>Call: 123-456-7890 | Email: info@glamourbridalsalon.com | Visit: 123 Beauty Lane, City</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Glamour Bridal Salon. All rights reserved. | Designed for Elegance</p>
+    </footer>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+        
+        function showSlide(index) {
+            if (index >= totalSlides) currentSlide = 0;
+            else if (index < 0) currentSlide = totalSlides - 1;
+            else currentSlide = index;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+        
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
